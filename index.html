@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#183d30">
+<title>La liste de Noël de Celine</title>
+
+<style>
+:root {
+  --green: #183d30;
+  --green2: #294b3b;
+  --gold: #bd9b5d;
+  --cream: #f5f1e8;
+  --paper: #fffdf8;
+  --ink: #253129;
+  --muted: #737a70;
+  --line: #e6dfd1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+}
+
+/* CABECERA */
+
+.hero {
+  min-height: 350px;
+  padding: 25px 20px 38px;
+  color: white;
+  background:
+    linear-gradient(90deg,
+      rgba(12,38,28,.88),
+      rgba(12,38,28,.3)),
+    url("https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+}
+
+.hero-inner {
+  max-width: 1040px;
+  min-height: 315px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  color: #e4d1a8;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.hero-copy { padding: 45px 0 10px; }
+
+.kicker {
+  color: #e4d1a8;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+h1 {
+  font: normal clamp(42px,8vw,76px)/1.02 Georgia,serif;
+  margin: 16px 0;
+  color: #fff9ec;
+}
+
+.hero-copy p {
+  font: 15px/1.7 Georgia,serif;
+  color: #eee9dd;
+  max-width: 440px;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: #e4d1a8;
+  font: italic 13px Georgia,serif;
+}
+
+/* CONTENIDO */
+
+.main {
+  max-width: 1040px;
+  margin: auto;
+  padding: 35px 18px 50px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin-bottom: 21px;
+}
+
+.section-head h2 {
+  font: normal 30px Georgia,serif;
+  color: var(--green);
+  margin: 0;
+}
+
+.section-head p {
+  font: italic 13px Georgia,serif;
+  color: var(--muted);
+}
+
+/* TARJETAS */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  overflow: hidden;
+  min-height: 210px;
+  box-shadow: 0 5px 18px rgba(31,51,39,.05);
+}
+
+.photo {
+  position: relative;
+  min-height: 210px;
+  background: #e9e5da;
+  overflow: hidden;
+}
+
+.photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.number {
+  position: absolute;
+  left: 11px;
+  top: 11px;
+  background: var(--green);
+  color: #f0dfbb;
+  border: 1px solid #d8c397;
+  border-radius: 50%;
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  font: 12px Georgia,serif;
+}
+
+.info {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.category {
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #987b43;
+  font-weight: bold;
+}
+
+h3 {
+  font: normal 24px Georgia,serif;
+  color: var(--green);
+  margin: 8px 0;
+}
+
+.desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.bottom {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.price {
+  font: normal 22px Georgia,serif;
+  color: var(--green);
+}
+
+.price small {
+  display: block;
+  font: 10px Arial,sans-serif;
+  color: #96968d;
+  margin-top: 3px;
+}
+
+.link {
+  text-decoration: none;
+  background: var(--green);
+  color: #fff9ec;
+  padding: 11px 14px;
+  border-radius: 7px;
+  font-size: 11px;
+  transition: .2s;
+}
+
+.link:hover { background: #987b48; }
+
+/* PIE */
+
+.footer {
+  border-top: 1px solid #ded6c6;
+  padding: 24px 18px 32px;
+  text-align: center;
+  color: #777b72;
+  font: 12px/1.8 Georgia,serif;
+}
+
+.footer strong {
+  display: block;
+  color: #967947;
+  font: normal 23px Georgia,serif;
+}
+
+/* RESPONSIVE */
+
+@media(min-width:760px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .card { grid-template-columns: 40% 1fr; }
+}
+
+@media(max-width:430px) {
+  .card {
+    grid-template-columns: 35% 1fr;
+    min-height: 220px;
+  }
+
+  .photo { min-height: 220px; }
+  .info { padding: 13px 12px; }
+  .info h3 { font-size: 20px; }
+  .desc { font-size: 12px; }
+  .price { font-size: 19px; }
+  .link { padding: 10px 11px; font-size: 10px; }
+
+  .section-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .hero-inner { min-height: 285px; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+
+    <div class="topline">
+      <span>✦ Noël 2026</span>
+      <span>Édition spéciale</span>
+    </div>
+
+    <div class="hero-copy">
+      <div class="kicker">La magie des fêtes</div>
+
+      <h1>La liste de Noël<br>de Celine</h1>
+
+      <p>
+        Quelques envies, de jolies idées
+        et beaucoup de joie à partager
+        pendant les fêtes.
+      </p>
+    </div>
+
+    <div class="hero-bottom">
+      <span>Choisi avec amour</span>
+      <span>✧ ✦ ✧</span>
+    </div>
+
+  </div>
+</header>
+
+<main class="main">
+
+  <div class="section-head">
+    <h2>Ses idées cadeaux</h2>
+    <p>Une sélection toute simple pour Noël</p>
+  </div>
+
+  <section class="grid">
+
+    <!-- 01 LUNETTES -->
+
+    <article class="card">
+      <div class="photo">
+        <img
+          src="https://images.pexels.com/photos/701877/pexels-photo-701877.jpeg?auto=compress&cs=tinysrgb&w=900"
+          alt="Lunettes de soleil"
+        >
+        <span class="number">01</span>
+      </div>
+
+      <div class="info">
+        <div class="category">Accessoires</div>
+        <h3>Lunettes de soleil</h3>
+
+        <p class="desc">
+          Une jolie paire de lunettes pour les journées
+          ensoleillées, avec un style élégant et intemporel.
+        </p>
+
+        <div class="bottom">
+          <div class="price">
+            ≈ 25 €
+            <small>Budget indicatif</small>
+          </div>
+
+          <a class="link"
+             href="https://www.amazon.fr/s?k=lunettes+de+soleil+femme+UV400"
+             target="_blank" rel="noopener">
+            Voir sur Amazon.fr ↗
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 LAMPE -->
+
+    <article class="card">
+      <div class="photo">
+        <img
+          src="REEMPLAZAR_POR_FOTO_LAMPARA"
+          alt="Lampe de lecture Kikkerland"
+        >
+        <span class="number">02</span>
+      </div>
+
+      <div class="info">
+        <div class="category">Lecture</div>
+        <h3>Lumière de lecture</h3>
+
+        <p class="desc">
+          Lampe mains libres Kikkerland, avec col flexible,
+          quatre modes de lumière et recharge USB.
+        </p>
+
+        <div class="bottom">
+          <div class="price">
+            ≈ 20 €
+            <small>Budget indicatif</small>
+          </div>
+
+          <a class="link"
+             href="https://www.amazon.fr/s?k=Kikkerland+hands+free+book+light"
+             target="_blank" rel="noopener">
+            Voir sur Amazon.fr ↗
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 ROBE -->
+
+    <article class="card">
+      <div class="photo">
+        <img
+          src="https://images.pexels.com/photos/6311613/pexels-photo-6311613.jpeg?auto=compress&cs=tinysrgb&w=900"
+          alt="Robe de chambre"
+        >
+        <span class="number">03</span>
+      </div>
+
+      <div class="info">
+        <div class="category">Bien-être</div>
+        <h3>Robe de chambre</h3>
+
+        <p class="desc">
+          Une robe de chambre douce et confortable
+          pour profiter des moments de détente à la maison.
+        </p>
+
+        <div class="bottom">
+          <div class="price">
+            ≈ 30 €
+            <small>Budget indicatif</small>
+          </div>
+
+          <a class="link"
+             href="https://www.amazon.fr/s?k=robe+de+chambre+femme+douce"
+             target="_blank" rel="noopener">
+            Voir sur Amazon.fr ↗
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 PRESSE-AGRUMES -->
+
+    <article class="card">
+      <div class="photo">
+        <img
+          src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=900"
+          alt="Presse-agrumes"
+        >
+        <span class="number">04</span>
+      </div>
+
+      <div class="info">
+        <div class="category">Cuisine</div>
+        <h3>Presse-agrumes</h3>
+
+        <p class="desc">
+          Un appareil pratique pour préparer facilement
+          des jus d'oranges et de citrons frais.
+        </p>
+
+        <div class="bottom">
+          <div class="price">
+            ≈ 25 €
+            <small>Budget indicatif</small>
+          </div>
+
+          <a class="link"
+             href="https://www.amazon.fr/s?k=presse+agrumes+electrique"
+             target="_blank" rel="noopener">
+            Voir sur Amazon.fr ↗
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 ARMOIRE À PHARMACIE -->
+
+    <article class="card">
+      <div class="photo">
+        <img
+          src="https://media.adeo.com/mkp/166e4394435340e78e235d4a12a699cd/media.jpeg?fit=bounds&format=jpg&height=1200&quality=80&width=1200"
+          alt="Armoire à pharmacie"
+        >
+        <span class="number">05</span>
+      </div>
+
+      <div class="info">
+        <div class="category">Maison</div>
+        <h3>Armoire à pharmacie</h3>
+
+        <p class="desc">
+          Une armoire pratique pour ranger les produits
+          et accessoires de premiers soins.
+        </p>
+
+        <div class="bottom">
+          <div class="price">
+            ≈ 40 €
+            <small>Budget indicatif</small>
+          </div>
+
+          <a class="link"
+             href="https://www.amazon.fr/s?k=armoire+%C3%A0+pharmacie+murale"
+             target="_blank" rel="noopener">
+            Voir sur Amazon.fr ↗
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 MINI SERRE -->
+
+    <article class="card">
+      <div class="photo">
+        <img
+          src="REEMPLAZAR_POR_FOTO_MINI_SERRE"
+          alt="Mini serre à plusieurs étagères"
+        >
+        <span class="number">06</span>
+      </div>
+
+      <div class="info">
+        <div class="category">Jardin</div>
+        <h3>Mini serre</h3>
+
+        <p class="desc">
+          Une petite serre à plusieurs niveaux pour
+          installer des plantes, des semis et de jolis petits pots.
+        </p>
+
+        <div class="bottom">
+          <div class="price">
+            ≈ 30 €
+            <small>Budget indicatif</small>
+          </div>
+
+          <a class="link"
+             href="https://www.amazon.fr/s?k=mini+serre+de+jardin+plusieurs+etageres"
+             target="_blank" rel="noopener">
+            Voir sur Amazon.fr ↗
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<footer class="footer">
+  <strong>Joyeux Noël !</strong>
+  Que cette période soit remplie de douceur et de beaux moments ✨
+</footer>
+
+</body>
+</html>
